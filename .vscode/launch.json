@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug (OpenOCD)",
+            "cwd": "${workspaceRoot}",
+            "executable": "target/thumbv7em-none-eabihf/debug/nrf-blink",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "device": "NRF52840",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/nrf52.cfg"
+            ],
+            "interface": "swd",
+        },
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "bmp",
+            "cwd": "${workspaceRoot}",
+            "executable": "./target/thumbv7em-none-eabihf/debug/${workspaceFolderBasename}",
+            "name": "Debug (Black Magic Probe)",
+            "device": "NRF52840",
+            "BMPGDBSerialPort": "/dev/ttyBmpGdb",
+            "targetId": 1,
+            "interface": "swd"
+        }
+    ]
+}

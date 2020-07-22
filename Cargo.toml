@@ -1,0 +1,17 @@
+[package]
+name = "nrf-blink"
+version = "0.1.0"
+authors = ["iddar <iddar@dbug.mx>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+nrf52840-hal = "0.11.0"
+cortex-m-rt = "0.6.12"
+panic-halt = "0.2.0"
+
+
+[features]
+rt = ["nrf52840-hal/rt"]
+default = ["rt"]
